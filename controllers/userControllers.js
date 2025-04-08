@@ -4,6 +4,8 @@ export async function handleGetAllUsers(req, res) {
     try {
       const users = await User.findAll();
       res.status(200).json(users);
+      console.log(users);
+      
     } catch (error) {
       res.status(500).json({ error: 'Erreur lors de la récupération des utilisateurs.' });
     }
