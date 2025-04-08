@@ -13,17 +13,16 @@ class User {
             data
         });
     }
-static async update (id,data){
+    static async update (id,data){
     return await prisma.user.update({
       where: { id: Number(id) },
       data,
     });
-
 }
 
- static async delete(id){
-return await prisma.user.delete({
-  where: { id: Number(id) },
+    static async delete(id){
+    return await prisma.user.delete({
+        where: { id: Number(id) },
 });
  }
     
