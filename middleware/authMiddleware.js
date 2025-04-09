@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-const SECRET = process.env.JWT_SECRET
-
 export const authCheck = (req, res, next) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -10,7 +8,7 @@ export const authCheck = (req, res, next) => {
         return res.status(401).json({ message: 'Token non fourni.' });
     };
 
-    jwt.verify(token, SECRET, (err, decoded) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
             return res.status(403).json({ message: 'Token invalide.' });
         }    
