@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { Router } from 'express';
 
 const prisma = new PrismaClient();
 
@@ -8,14 +9,14 @@ class User {
     }
 
     static async update (id,data){
-        return await prisma.user.update({
+        return await prisma.users.update({
         where: { id: Number(id) },
         data,
         });
     }
 
     static async delete(id){
-        return await prisma.user.delete({
+        return await prisma.users.delete({
         where: { id: Number(id) },
     });
     }

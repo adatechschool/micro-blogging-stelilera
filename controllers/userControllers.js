@@ -1,7 +1,10 @@
 import User from "../model/userModel.js";
+console.log("✅ Contrôleur chargé !");
 
 export async function handleGetAllUsers(req, res) {
+  console.log('📥 Requête GET /users reçue');
     try {
+      console.log('route GET /users')
       const users = await User.findAll();
       console.log(users)
       res.status(200).json(users);
@@ -19,3 +22,4 @@ export async function handleGetAllUsers(req, res) {
     res.status(500).json({ error: 'Erreur lors de la création de utilisateur.' });
     }
     }
+
