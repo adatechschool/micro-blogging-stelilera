@@ -21,8 +21,6 @@ export async function handleGetAllUsers(req, res) {
   }
 
   export const handleLoginUser = async (req, res) => {
-    console.log('req.body:', req.body); // Vérifie que req.body contient les données
-    console.log('req:', req); 
     try {
       const data = req.body;
       const user = await User.login(data);
