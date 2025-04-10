@@ -1,19 +1,15 @@
 import express from "express";
 import 'dotenv/config';
 import { users } from "./routes/user.js";
-<<<<<<< HEAD
 import { posts } from './routes/post.js';
 //import authCheck from "./middleware/authMiddleware.js";
 import session from "express-session";
-=======
 import path from 'path'; // importe le module path de Node.js, qui permet de manipuler les chemins de fichiers
 import { fileURLToPath } from 'url'; // importe une fonction qui permet de retrouver le chemin du fichier actuel, pour ensuite pouvoir reconstruire __dirname
->>>>>>> feature/loginPage
 
 const app = express();
 const port = process.env.PORT;
 
-<<<<<<< HEAD
 app.use(session({
   secret: 'your-secret-key',
   resave: false,
@@ -21,13 +17,11 @@ app.use(session({
   cookie: { secure: false, httpOnly: true, maxAge: 3600000 }
 }));
 
-=======
 const __filename = fileURLToPath(import.meta.url); // obtenir le chemin complet vers ton fichier actuel (index.js)
 const __dirname = path.dirname(__filename); // obtenir le dossier dans lequel se trouve ce fichier
 
 // Sert les fichiers statiques depuis "public"
 app.use(express.static(path.join(__dirname, 'public'))); // tous les fichiers qui sont dans le dossier public/ sont accessibles publiquement.
->>>>>>> feature/loginPage
 
 app.use(express.json());
 app.use(users);
