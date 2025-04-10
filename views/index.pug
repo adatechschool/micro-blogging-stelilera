@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="utf-8")
+    meta(name="description" content='stelilera')
+    title= title
+    link(rel="stylesheet", href="/styles/styles.css") 
+
+    body
+    div.main-container
+        div.bg-container
+            img.bg-image(src="/img/pexels-jess-vide-4784571.jpg")
+
+        div.form-container
+            h1= message
+            
+            p.intro 
+            | Connecte-toi et partage les photos de tes plus
+            br
+            | beaux voyages avec tes followers !
+            
+            form
+            input.email-input(
+                class='name',
+                type='text',
+                name='username',
+                placeholder="Email",
+                required
+            )
+            input.password-input(
+                class='mail',
+                type='mail',
+                name='usermail',
+                placeholder="Password"
+            )
+        
+            div.remember-forget-container
+                label
+                    input(type="checkbox")
+                    span.remember-me Se souvenir de moi
+                a(href='#').forget-password Mot de passe oublié
+
+            button.login-button Valider
