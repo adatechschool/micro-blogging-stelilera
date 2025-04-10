@@ -16,32 +16,32 @@ class User {
     console.log("Données reçues:", data);
     
 
-            let hashedPassword
+            let hashedPassword;
             if(data.password){
               hashedPassword = await bcrypt.hash(data.password, 10); // hashé le mot de passe de l'utilisateur
 
             }
         
              const updateData = {
-               name: data.name,
+              name: data.name,
               lastname: data.lastname,
               mail: data.mail,
-              password: data.password
+              password: hashedPassword
             }
 
-            if (hashedPassword) {
-              updateData.password = hashedPassword; // Ici on utilise le mot de passe hashé, pas data.password
-            }
+            // if (hashedPassword) {
+            //   updateData.password = hashedPassword; // Ici on utilise le mot de passe hashé, pas data.password
+            // }
 
              console.log("Données à mettre à jour:", updateData)
               const user = await prisma.users.update({
-              where: {id:id },
+              where: { id: id },
               data: updateData
     });
  console.log("Résultat de la mise à jour:", user);
     return user;
   } catch (error) {
-    console.error("Erreur lors de la mise à jour de l'utilisateur:", error);
+    console.error("Erreur lors de la mise à jour de l'utilisateur:", error.message);
     throw new Error("Échec de la mise à jour de l'utilisateur.");
   }
 }

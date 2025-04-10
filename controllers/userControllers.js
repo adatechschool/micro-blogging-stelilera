@@ -35,7 +35,7 @@ export async function handleGetAllUsers(req, res) {
 
 export async function handleUpdateUser(req, res) {
   try {
-    const userId = req.params.id;
+    const userId = parseInt(req.params.id);
     const data = req.body;
 
     console.log("Contrôleur: ID reçu =", userId);
