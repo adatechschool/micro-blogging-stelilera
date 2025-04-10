@@ -29,6 +29,7 @@ app.use(express.json());
 app.use(users);
 app.use(posts);
 
+
 // pug
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -44,4 +45,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur le port http://localhost:${port}`);
-});
+})

@@ -32,3 +32,37 @@ export async function handleGetAllUsers(req, res) {
       res.status(500).json({ e: 'Erreur lors de la connexion de l\'utilisateur'})
     }
   }
+
+export async function handleUpdateUser(req, res) {
+  try {
+    const userId = req.params.id;
+    const data = req.body;
+
+    console.log("Contrôleur: ID reçu =", userId);
+    console.log("Contrôleur: Données reçues =", data);
+
+    const updatedUser = await User.update(userId, data);
+
+    console.log("Contrôleur: Mise à jour réussie =", updatedUser);
+    res.status(200).json(updatedUser); // Renvoie l'utilisateur mis à jour, pas juste data
+  } catch (error) {
+    console.error("Erreur complète:", error);
+    res.status(500)
+      .json({ error: "Erreur lors de la modification de l'utilisateur." });
+  }
+}
+
+export async function handleDeleteUser(req,res) {
+  try {
+    const userId = req.params.id;
+
+    const deletedUser = await User.delete(userId);
+
+    console.log("Contrôleur: Suppression réussie =", deletedUser);res.status(200)
+    .json({ message: "Utilisateur supprimé avec succès", id: userId });
+  } catch (error) {
+    console.error("Erreur complète:", error);
+    res.status(500)
+      .json({ error: "Erreur lors de la suppression de l'utilisateur." });
+  }
+}
