@@ -15,6 +15,8 @@ app.use(session({
   cookie: { secure: false, httpOnly: true, maxAge: 3600000 }
 }));
 
+app.use(express.static('public'));
+
 
 app.use(express.json());
 app.use(users);
