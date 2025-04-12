@@ -5,6 +5,7 @@ html(lang='en')
     meta(name="description" content='stelilera')
     title= title
     link(rel="stylesheet", href="/styles/styles.css") 
+    script(defer src="script.js") 
 
     body
     div.main-container
@@ -19,25 +20,25 @@ html(lang='en')
             br
             | beaux voyages avec tes followers !
             
-            form
-            input.email-input(
-                class='name',
-                type='text',
-                name='username',
-                placeholder="Email",
-                required
-            )
-            input.password-input(
-                class='mail',
-                type='mail',
-                name='usermail',
-                placeholder="Password"
-            )
-        
-            div.remember-forget-container
-                label
-                    input(type="checkbox")
-                    span.remember-me Se souvenir de moi
-                a(href='#').forget-password Mot de passe oublié
+            form#data-form
+                input.email-input(
+                    class='name',
+                    type='text',
+                    name='mail',
+                    placeholder="Email",
+                    required
+                )
+                input.password-input(
+                    class='mail',
+                    type='mail',
+                    name='password',
+                    placeholder="Password"
+                )
+            
+                div.remember-forget-container
+                    label
+                        input(type="checkbox")
+                        span.remember-me Se souvenir de moi
+                    a(href='#').forget-password Mot de passe oublié
 
-            button.login-button Valider
+                button.login-button(type='submit') Valider
