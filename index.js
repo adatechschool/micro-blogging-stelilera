@@ -37,8 +37,16 @@ app.set('views', './views');
 // });
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Stelilera', message: 'Bienvenue sur PixTrip 📸 !' });
+  res.render('index', { title: 'Snappy' });
 });
+app.get('/login', (req, res) => {
+  res.render('login', { title: 'Snappy' });
+});
+app.get('/register', (req, res) => {
+  res.render('register', { title: 'Snappy' });
+});
+
+
 
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur le port http://localhost:${port}`);

@@ -1,0 +1,338 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background-color: #EEEEEE;
+    font-family: Helvetica, sans-serif;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.navbar{
+    top: 0;
+    z-index: 10;
+    height: 90px;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    padding: 0 50px 0 50px;
+    background-color: black;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 30px;
+    color: #BFFF6B;
+    font-weight: bold;
+    font-family: "Rock Salt", cursive;
+}
+ul{
+    gap: 70px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+.house-icon, .users-icon, .bell-icon {
+    color: white;
+}
+.house-icon{
+    width: 32px;
+    height: 32px;
+    color: white;
+    fill: currentColor;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.users-icon{
+    width:24px;
+    height:24px;
+    color: white;
+    fill: currentColor;
+    transition: transform 0.2s ease, filter 0.2s ease; 
+}
+.bell-icon{
+    width:24px;
+    height:24px;
+    color: white;
+    fill: currentColor;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.user-icon{
+    width:24px;
+    height:24px;
+    color: white;
+    fill: currentColor;
+    transition: transform 0.2s ease, filter 0.2s ease; 
+}
+.home-link:hover .house-icon,
+.users-link:hover .users-icon,
+.bell-link:hover .bell-icon, 
+.user-link:hover .user-icon{
+    transform: scale(1.1);
+    color: #BFFF6B;
+}
+.container-searchBar-login{
+    display: flex;
+}
+.searchBar{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    margin: 15px 30px 15px 0;
+    padding: 6px 6px 6px 15px;
+    background-color: rgb(243, 241, 241);
+}
+.main-container{
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    gap: 10px;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px 20px;
+    align-items: flex-start;
+}
+.left-container{
+    flex: 0 0 300px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* important si tu es en flex ! */
+    height: fit-content;
+}
+.right-container {
+    flex: 1;
+}
+.profil{
+    width: 450px;
+    display: flex;
+    height: 360px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: white;
+    border: solid 2px #D9D9D9;
+}
+.container-picture-name{
+    display: flex;
+}
+.username{
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+.identifiant{
+    margin-top: 0;
+    font-size: 14px;
+    color: #8A8A8A;
+}
+.user-picture-profile{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.user-content{
+    display: flex;
+    flex-direction: column;
+}
+.biography{
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+.edit-button{
+    width: 165px;
+    height: 45px;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-bottom: 120px;
+    align-self: flex-end;
+    border: solid 2px black;
+    transition: all 0.2s ease;
+    background-color: #BFFF6B; 
+    box-shadow: 4px 4px 0px black;
+}
+.edit-button:active{
+    box-shadow: none;
+    transform: translate(4px, 4px);
+}
+
+/* FRIENDS */
+.friends{
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    border: solid 2px #D9D9D9;
+}
+.followers{
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+.show-more-button{
+    width: 450px;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: solid 2px black;
+    transition: all 0.2s ease;
+    background-color: #fbfbfb; 
+    box-shadow: 4px 4px 0px black;
+}
+.show-more-button:active{
+    box-shadow: none;
+    transform: translate(4px, 4px);
+}
+.show-more-button:hover{
+    background-color: #BFFF6B;
+}
+
+/* COLONNE DE DROITE */
+.post-container{
+    max-width: 715px;
+    width: 100%;
+    display: flex;
+    height: 200px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: white;
+    border: solid 2px #D9D9D9;
+}
+.img-name-date-container{
+    display: flex;
+    align-content: space-between;
+}
+.friends-picture-profile{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    padding: 4px;
+}
+.media{
+    display: flex;
+    margin-bottom: 5px;
+    align-self: flex-end;
+}
+.post-photo{
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+.live{
+    font-size: 14px;
+    font-weight: bold;
+}
+.img-input-container{
+    display: flex;
+}
+.user-picture-post{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.whatsup{
+    width: 830px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: solid 1px #D9D9D9;
+}
+.post-button{
+    width: 120px;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px;
+    border-radius: 8px;
+    margin-bottom: 120px;
+    align-self: flex-end;
+    border: solid 2px black;
+    transition: all 0.2s ease;
+    background-color: #BFFF6B; 
+    box-shadow: 4px 4px 0px black;
+}
+.post-button:active{
+    box-shadow: none;
+    transform: translate(4px, 4px);
+}
+
+/* FEED */
+.feed{
+    width: 100%;
+    padding: 20px;
+    height: 1045px;
+    margin-bottom: 10px;
+    max-width: 715px;
+    border-radius: 20px;
+    background-color: white;
+    border: solid 2px #D9D9D9;
+}
+.img-name-date-container{
+    display: flex;
+    align-content: space-between;
+}
+.user-picture-feed{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.username-feed{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+.feed-date{
+    margin-top: 0;
+    font-size: 14px;
+    color: #8A8A8A;
+}
+.follow-button{
+    width: 120px;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px;
+    border-radius: 8px;
+    align-self: flex-end;
+    border: solid 2px black;
+    transition: all 0.2s ease;
+    background-color: #BFFF6B; 
+    box-shadow: 4px 4px 0px black;
+}
+.follow-button:active{
+    box-shadow: none;
+    transform: translate(4px, 4px);
+}
+.feed-picture{
+    width: 710px;
+    height: 720px;
+    object-fit: cover;
+
+}
