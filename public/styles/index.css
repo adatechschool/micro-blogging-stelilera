@@ -1,8 +1,7 @@
 body{
-    height: 100%;
     margin: 0;
     padding: 0;
-    justify-content: center;
+    height: 100%;
     background-color: #EEEEEE;
     font-family: Helvetica, sans-serif;
 }
@@ -60,6 +59,19 @@ ul{
     fill: currentColor;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
+.container-searchBar-login{
+    width: 250px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.search-icon {
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    pointer-events: none;
+}
 .user-icon{
     width:24px;
     height:24px;
@@ -83,7 +95,7 @@ ul{
     border: none;
     border-radius: 4px;
     margin: 15px 30px 15px 0;
-    padding: 6px 6px 6px 15px;
+    padding: 6px 6px 6px 30px;
     background-color: rgb(243, 241, 241);
 }
 .main-container{
@@ -96,11 +108,11 @@ ul{
     align-items: flex-start;
 }
 .left-container{
+    top: 0;
     flex: 0 0 300px;
     position: sticky;
-    top: 0;
-    align-self: flex-start; /* important si tu es en flex ! */
     height: fit-content;
+    align-self: flex-start;
 }
 .right-container {
     flex: 1;
@@ -108,10 +120,11 @@ ul{
 .profil{
     width: 450px;
     display: flex;
-    height: 360px;
+    height: 300px;
     padding: 20px;
+    position: relative;
     margin-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     flex-direction: column;
     background-color: white;
     border: solid 2px #D9D9D9;
@@ -136,7 +149,6 @@ ul{
     object-fit: cover;
     border-radius: 50%;
     margin-right: 20px;
-    margin-bottom: 20px;
 }
 .user-content{
     display: flex;
@@ -144,18 +156,19 @@ ul{
 }
 .biography{
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 0;
 }
 .edit-button{
-    width: 165px;
-    height: 45px;
+    right: 20px;
+    bottom: 20px;
+    padding: 6px;
+    width: 120px;
     color: black;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    padding: 12px 24px;
+    position: absolute;
     border-radius: 8px;
-    margin-bottom: 120px;
     align-self: flex-end;
     border: solid 2px black;
     transition: all 0.2s ease;
@@ -171,7 +184,7 @@ ul{
 .friends{
     height: auto;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: white;
     border: solid 2px #D9D9D9;
 }
@@ -182,7 +195,7 @@ ul{
     font-family: "Bricolage Grotesque", sans-serif;
 }
 .show-more-button{
-    width: 450px;
+    width: 440px;
     height: 30px;
     color: black;
     cursor: pointer;
@@ -205,39 +218,51 @@ ul{
 
 /* COLONNE DE DROITE */
 .post-container{
-    max-width: 715px;
+    max-width: 650px;
     width: 100%;
     display: flex;
-    height: 200px;
+    height: 180px;
     padding: 20px;
+    position: relative;
     margin-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     flex-direction: column;
     background-color: white;
     border: solid 2px #D9D9D9;
 }
-.img-name-date-container{
-    display: flex;
-    align-content: space-between;
-}
 .friends-picture-profile{
-    width: 140px;
-    height: 140px;
+    margin: 4px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    padding: 4px;
+    border-radius: 4px;
+    transition: transform 0.2s ease-in-out;
+}
+.friends-picture-profile:hover {
+    transform: scale(0.9);
 }
 .media{
     display: flex;
     margin-bottom: 5px;
     align-self: flex-end;
 }
+.image-icon{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+.camera-icon{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
 .post-photo{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     margin-right: 40px;
 }
 .live{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 .img-input-container{
@@ -251,23 +276,28 @@ ul{
     margin-right: 20px;
     margin-bottom: 20px;
 }
+.icon-photos-videos{
+    display: flex;
+    align-items: center;
+}
 .whatsup{
     width: 830px;
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-radius: 10px;
     border: solid 1px #D9D9D9;
 }
 .post-button{
+    right: 20px;
+    bottom: 20px;
+    padding: 6px;
     width: 120px;
     color: black;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    padding: 6px;
+    position: absolute;
     border-radius: 8px;
-    margin-bottom: 120px;
-    align-self: flex-end;
     border: solid 2px black;
     transition: all 0.2s ease;
     background-color: #BFFF6B; 
@@ -280,12 +310,13 @@ ul{
 
 /* FEED */
 .feed{
-    width: 100%;
+    position: relative;
+    width: 650px;
     padding: 20px;
-    height: 1045px;
-    margin-bottom: 10px;
+    height: 1060px;
     max-width: 715px;
-    border-radius: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
     background-color: white;
     border: solid 2px #D9D9D9;
 }
@@ -313,14 +344,16 @@ ul{
     color: #8A8A8A;
 }
 .follow-button{
+    top: 20px;
+    right: 20px; 
+    padding: 6px;
     width: 120px;
     color: black;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    padding: 6px;
+    position: absolute;
     border-radius: 8px;
-    align-self: flex-end;
     border: solid 2px black;
     transition: all 0.2s ease;
     background-color: #BFFF6B; 
@@ -330,9 +363,47 @@ ul{
     box-shadow: none;
     transform: translate(4px, 4px);
 }
+.legend-feed{
+    font-size: 15px;
+    margin: 0 0 30px 0;
+}
 .feed-picture{
-    width: 710px;
+    width: 650px;
     height: 720px;
     object-fit: cover;
-
+}
+.like-share-comment{
+    width: 100%;
+    margin: 15px 0 15px 0;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+.interactions{
+    display: flex;
+}
+.nb-likes, .nb-comment{
+    margin-right: 30px;
+}
+.save-container{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+.save-icon{
+    width: 24px;
+    height: 24px;
+    margin-top: -8px;
+}
+.heart-icon, .comment-icon, .share-icon{
+    width: 24px;
+    height: 20px;
+    margin: 10px 8px 0 0;
+}
+.comment-feed{
+    width: 630px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #D9D9D9;
 }

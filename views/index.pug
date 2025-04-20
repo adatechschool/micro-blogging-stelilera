@@ -30,10 +30,8 @@ html(lang='en')
                         path(fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z")
         
         div.container-searchBar-login
-            input.searchBar(
-                type='search'
-                placeholder='Rechercher...'
-            )
+            input.searchBar(type='search' placeholder='Rechercher...')
+            img.search-icon(src="/icons/search.svg" alt="search icon")
             p.login: a.user-link(href="/")
                 svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
                     path(fill="#currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
@@ -52,28 +50,44 @@ html(lang='en')
             div.friends
                 p.followers 182 ami(e)s
                 div.friends-container
-                    img(src="/img/prince-akachi.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/nabih-navarro.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/erik-lucatero.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/bardia-hashemirad.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/albert-dera.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/jessica-radanavong.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/portrait-woman.jpeg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/lance-reis.jpg" alt="friend picture" class="friends-picture-profile")
-                    img(src="/img/bave-pictures.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/prince-akachi.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/nabih-navarro.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/stylish-man.jpeg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/erik-lucatero.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/bardia-hashemirad.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/pexels-heftiba.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/albert-dera.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/portrait-woman.jpeg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/jessica-radanavong.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/lance-reis.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/bave-pictures.jpg" alt="friend picture" class="friends-picture-profile")
+                    a(href="/")
+                        img(src="/img/tim-mossholder.jpg" alt="friend picture" class="friends-picture-profile")
                     button.show-more-button Voir plus
 
         div.right-container
             div.post-container
                 div.media
-                    p.post-photo PHOTOS / VIDÉOS
+                    div.icon-photos-videos
+                        img.image-icon(src="/icons/image.svg" alt="")
+                        p.post-photo PHOTOS / VIDÉOS
+                    img.camera-icon(src="/icons/camera.svg" alt="")
                     p.live VIDÉO EN DIRECT
                 div.img-input-container
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-post")
-                    input.whatsup(type="text-area"
-                    placeholder='Quoi de neuf Jane ?'
-                    )
-                button.post-button Valider
+                    input.whatsup(type="text-area" placeholder='Quoi de neuf Jane ?')
+                button.post-button Publier
 
             div.feed
                 div.img-name-date-container
@@ -83,6 +97,17 @@ html(lang='en')
                         p.feed-date 19 avril 2025
                     div.feed-button
                         button.follow-button Suivi(e)
-                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat,  vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor  tortor. Morbi da vitae neque. Aenean fermentum mattis  malesuada.
+                p.legend-feed Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat,  vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor  tortor. Morbi da vitae neque. Aenean fermentum mattis  malesuada.
                 img(src="/img/urban-fashion.jpeg" alt="feed picture" class="feed-picture")
 
+                div.like-share-comment
+                    div.interactions
+                        img.heart-icon(src="/icons/heart.svg" alt="")
+                        p.nb-likes 1.8K
+                        img.comment-icon(src="/icons/comment.svg" alt="")
+                        p.nb-comment 12.8K
+                        img.share-icon(src="/icons/share.svg" alt="")
+                        p.nb-share 18K
+                    div.save-container
+                        img.save-icon(src="/icons/save.svg" alt="")
+                input.comment-feed(type="text-area" placeholder='Ajouter un commentaire...')
