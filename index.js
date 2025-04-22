@@ -43,7 +43,7 @@ app.get('/login', (req, res) => {
   res.render('login', { title: 'Snappy' });
 });
 app.get('/register', (req, res) => {
-  res.render('register', { title: '💚 Snappy' });
+  res.render('register', { title: 'Snappy' });
 });
 
 
