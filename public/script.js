@@ -26,4 +26,4 @@ const handleSubmit = async (e) => {
     }
 };
 
-document.getElementById('dataForm').addEventListener('submit', handleSubmit);
+document.getElementById('data-form').addEventListener('submit', handleSubmit);
