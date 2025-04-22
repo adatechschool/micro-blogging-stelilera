@@ -4,7 +4,7 @@ const handleSubmit = async (e) => {
         e.preventDefault();
 
     // récupérer les données de l'utilisateur
-    const mail = e.target.email.value;
+    const mail = e.target.mail.value;
     const password = e.target.password.value;
 console.log(password);
 

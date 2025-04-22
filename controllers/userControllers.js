@@ -23,6 +23,7 @@ export async function handleGetAllUsers(req, res) {
   export const handleLoginUser = async (req, res) => {
     try {
       const data = req.body;
+      console.log("Données reçues côté serveur :", req.body);
       const user = await User.login(data);
 
       req.session.user = user // crée une session à l'utilisateur
