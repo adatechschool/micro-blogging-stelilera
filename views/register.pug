@@ -9,7 +9,6 @@ html(lang='en')
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
 
     body
@@ -29,28 +28,28 @@ html(lang='en')
             | Un réseau social simple, cool et 100% toi.
 
             form(action='/register' method='POST')
-            div.container-names
-                input.username(
-                    type='text',
-                    name='username',
-                    placeholder="Prénom"
+                div.container-names
+                    input.username(
+                        type='text',
+                        name='username',
+                        placeholder="Prénom"
+                    )
+                    input.lastname(
+                        type='text',
+                        name='lastname',
+                        placeholder="Nom"
+                    )
+                input.email-input(
+                    type='email',
+                    name='email',
+                    placeholder="Email",
+                    required
                 )
-                input.lastname(
-                    type='text',
-                    name='lastname',
-                    placeholder="Nom"
+                input.password-input(
+                    type='password',
+                    name='password',
+                    placeholder="Password"
                 )
-            input.email-input(
-                type='email',
-                name='email',
-                placeholder="Email",
-                required
-            )
-            input.password-input(
-                type='password',
-                name='password',
-                placeholder="Password"
-            )
         
             div.remember-forget-container
                 label

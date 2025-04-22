@@ -8,8 +8,8 @@ html(lang='en')
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
+    script(defer src="script.js")
 
     body
     div.main-container
@@ -27,26 +27,26 @@ html(lang='en')
             br
             | Un réseau social simple, cool et 100% toi.
 
-            form(action='/login' method='POST')
-            input.email-input(
-                type='email',
-                name='email',
-                placeholder="Email",
-                required
-            )
-            input.password-input(
-                type='password',
-                name='password',
-                placeholder="Password"
-            )
+            form.login-form(action='/login' method='POST')
+                input.email-input(
+                    type='email',
+                    name='email',
+                    placeholder="Email",
+                    required
+                )
+                input.password-input(
+                    type='password',
+                    name='password',
+                    placeholder="Password"
+                )
         
-            div.remember-forget-container
-                label
-                    input(type="checkbox")
-                    span.remember-me Se souvenir de moi
-                a(href='#').forget-password Mot de passe oublié
+                div.remember-forget-container
+                    label
+                        input(type="checkbox")
+                        span.remember-me Se souvenir de moi
+                    a(href='#').forget-password Mot de passe oublié
 
-            button.login-button(type='submit') Se connecter
+                button.login-button(type='submit') Se connecter
 
             p.text-inscription-link 
                 | Tu n'as pas de compte ? 
