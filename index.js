@@ -17,8 +17,11 @@ app.use(session({
   cookie: { secure: false, httpOnly: true, maxAge: 3600000 }
 }));
 
+<<<<<<< HEAD
 app.use(express.static('public'));
 
+=======
+>>>>>>> feature/loginPage
 const __filename = fileURLToPath(import.meta.url); // obtenir le chemin complet vers ton fichier actuel (index.js)
 const __dirname = path.dirname(__filename); // obtenir le dossier dans lequel se trouve ce fichier
 
@@ -40,8 +43,16 @@ app.set('views', './views');
 // });
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Stelilera', message: 'Bienvenue sur PixTrip 📸 !' });
+  res.render('index', { title: 'Snappy' });
 });
+app.get('/login', (req, res) => {
+  res.render('login', { title: 'Snappy' });
+});
+app.get('/register', (req, res) => {
+  res.render('register', { title: 'Snappy' });
+});
+
+
 
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur le port http://localhost:${port}`);

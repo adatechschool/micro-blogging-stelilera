@@ -1,0 +1,53 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="utf-8")
+    meta(name="description" content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/styles/login.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
+
+    body
+    div.main-container
+        div.bg-container
+            img.bg-image(src="/img/urban-style-coffee-duo.jpeg")
+
+        div.form-container
+            h1 Bon retour sur 
+                span.snappy-title Snappy
+            
+            p.intro 
+            | Partage tes photos, tes humeurs et tout ce dont tu as envie, sans
+            br
+            | pression. Discute, like, réagis : ici c’est chill, c’est ton espace.
+            br
+            | Un réseau social simple, cool et 100% toi.
+
+            form(action='/login' method='POST')
+            input.email-input(
+                type='email',
+                name='email',
+                placeholder="Email",
+                required
+            )
+            input.password-input(
+                type='password',
+                name='password',
+                placeholder="Password"
+            )
+        
+            div.remember-forget-container
+                label
+                    input(type="checkbox")
+                    span.remember-me Se souvenir de moi
+                a(href='#').forget-password Mot de passe oublié
+
+            button.login-button(type='submit') Se connecter
+
+            p.text-inscription-link 
+                | Tu n'as pas de compte ? 
+                a.inscription-link(href="/register") Inscris-toi
