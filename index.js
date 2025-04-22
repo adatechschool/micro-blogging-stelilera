@@ -17,11 +17,8 @@ app.use(session({
   cookie: { secure: false, httpOnly: true, maxAge: 3600000 }
 }));
 
-<<<<<<< HEAD
 app.use(express.static('public'));
 
-=======
->>>>>>> feature/loginPage
 const __filename = fileURLToPath(import.meta.url); // obtenir le chemin complet vers ton fichier actuel (index.js)
 const __dirname = path.dirname(__filename); // obtenir le dossier dans lequel se trouve ce fichier
 
