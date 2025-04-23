@@ -71,9 +71,9 @@ h1 {
     padding: 6px 6px 6px 15px;
     background-color: rgb(243, 241, 241); 
 }
-.container-names{
+/* .container-names{
     display: flex;
-}
+} */
 .email-input{
     width: 350px;
     height: 30px;
