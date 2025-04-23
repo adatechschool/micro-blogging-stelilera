@@ -1,10 +1,14 @@
 const handleSubmit = async (e) => {
     try{
         e.preventDefault();
+        const formaData = new FormData(e.target);
+
+
     // récupérer les données de l'utilisateur
-    const mail = e.target.email.value;
-    const password = e.target.password.value;
-console.log(password);
+    const mail = formaData.get('email');
+    const password = formaData.get('password')
+    console.log(password);
+    
     const response = await fetch('/login', {
         method: 'POST',
         headers: {
