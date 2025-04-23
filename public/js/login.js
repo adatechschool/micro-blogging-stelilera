@@ -4,7 +4,7 @@ const handleSubmit = async (e) => {
     // récupérer les données de l'utilisateur
     const mail = e.target.email.value;
     const password = e.target.password.value;
-console.log(password);
+    console.log(password);
     const response = await fetch('/login', {
         method: 'POST',
         headers: {

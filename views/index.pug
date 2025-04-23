@@ -87,35 +87,38 @@ html(lang='en')
                     p.live VIDÉO EN DIRECT
                 div.img-input-container
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-post")
-                    div.input-wrapper
-                        input.whatsup(type="text-area" placeholder='Quoi de neuf Jane ?')
+                    
+                    form.input-wrapper(action='/login' method='POST')
+                        textarea.whatsup(name='post' placeholder='Quoi de neuf Jane ?')
                         img.smiley-whatsup-icon(src="/icons/smiley.svg" alt="smiley-icon")
-                button.post-button Publier
-            div.feed
-                div.feed-content
-                    div.img-name-date-container
-                        img(src="/img/jessica-radanavong.jpg" alt="user picture" class="user-picture-feed")
-                        div.user-content
-                            p.username-feed John Doe
-                            p.feed-date 19 avril 2025
-                        div.feed-button
-                            button.follow-button Suivi(e)
-                    p.legend-feed Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat,  vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor  tortor. Morbi da vitae neque. Aenean fermentum mattis  malesuada.
-                    img(src="/img/urban-fashion.jpeg" alt="feed picture" class="feed-picture")
-                div.feed-footer
-                    div.like-share-comment
-                        div.interactions
-                            img.heart-icon(src="/icons/heart.svg" alt="heart icon")
-                            p.nb-likes 1.8K
-                            img.comment-icon(src="/icons/comment.svg" alt="comment icon")
-                            p.nb-comment 12.8K
-                            img.share-icon(src="/icons/share.svg" alt="share icon")
-                            p.nb-share 18K
-                        div.save-container
-                            img.save-icon(src="/icons/save.svg" alt="save icon")
-                    div.comment-container
-                        div.input-wrapper
-                            input.comment-feed(type="text-area" placeholder='Ajouter un commentaire...')
-                            img.smiley-icon(src="/icons/smiley.svg" alt="smiley-icon")
-                        button.comment-button
-                            img.send-icon(src="/icons/send.svg" alt="send-icon")
+                        button.post-button(type='submit') Publier
+            
+            template#post-template
+                div.feed
+                    div.feed-content
+                        div.img-name-date-container
+                            img(src="/img/jessica-radanavong.jpg" alt="user picture" class="user-picture-feed")
+                            div.user-content
+                                p.username-feed John Doe
+                                p.feed-date 19 avril 2025
+                            div.feed-button
+                                button.follow-button Suivi(e)
+                        p.legend-feed Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat,  vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor  tortor. Morbi da vitae neque. Aenean fermentum mattis  malesuada.
+                        img(src="/img/urban-fashion.jpeg" alt="feed picture" class="feed-picture")
+                    div.feed-footer
+                        div.like-share-comment
+                            div.interactions
+                                img.heart-icon(src="/icons/heart.svg" alt="heart icon")
+                                p.nb-likes 1.8K
+                                img.comment-icon(src="/icons/comment.svg" alt="comment icon")
+                                p.nb-comment 12.8K
+                                img.share-icon(src="/icons/share.svg" alt="share icon")
+                                p.nb-share 18K
+                            div.save-container
+                                img.save-icon(src="/icons/save.svg" alt="save icon")
+                        div.comment-container
+                            div.input-wrapper
+                                input.comment-feed(type="text-area" placeholder='Ajouter un commentaire...')
+                                img.smiley-icon(src="/icons/smiley.svg" alt="smiley-icon")
+                            button.comment-button
+                                img.send-icon(src="/icons/send.svg" alt="send-icon")
