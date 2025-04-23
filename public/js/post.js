@@ -47,7 +47,7 @@ const handlePostSubmit = async (e) => {
 document.querySelector('.whatsup').addEventListener('submit', handlePostSubmit)
 
 
-
+// card
 function renderPost(post) {
     const template = document.querySelector('#post-template');
     const clone = template.content.cloneNode(true);
