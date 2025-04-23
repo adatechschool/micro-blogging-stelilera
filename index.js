@@ -48,6 +48,9 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
   res.render('register', { title: 'Snappy' });
 });
+app.get('/profil_change', (req, res) => {
+  res.render('profil_change', { title: 'Snappy' });
+});
 
 
 
