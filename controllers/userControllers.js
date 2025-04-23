@@ -1,5 +1,5 @@
 import User from "../model/userModel.js";
-import session from "express-session";
+import jwt from 'jsonwebtoken';
 
 export async function handleGetAllUsers(req, res) {
     try {
@@ -18,20 +18,29 @@ export async function handleGetAllUsers(req, res) {
     }catch(error){
     res.status(500).json({ error: 'Erreur lors de la création de utilisateur.' });
     }
-  }
+}
 
   export const handleLoginUser = async (req, res) => {
     try {
       const data = req.body;
-      const user = await User.login(data);
+      let user = await User.login(data);
+
+      const token = jwt.sign({ id: user.id, mail: user.mail }, 'your-secret-token', { expiresIn: '1h' }); // créer un token au user
+      user.token = token
 
       req.session.user = user // crée une session à l'utilisateur
-
-      res.status(200).json({messsage: 'connexion reussie', user});
+      res.status(200).json({messsage: 'connexion reussie', user });
     } catch(e){
+      console.log('error retreive user')
       res.status(500).json({ e: 'Erreur lors de la connexion de l\'utilisateur'})
     }
   }
+
+  export const handleLogoutUser = async (req, res) => {
+    req.session.user = undefined
+    res.redirect("/login")
+  };
+  
 
 export async function handleUpdateUser(req, res) {
   try {

@@ -55,7 +55,7 @@ class User {
     static async register(data) {
       try {
         
-        const existingUser = await prisma.users.findUnique({
+        const existingUser = await prisma.users.findFirst({
           where: { mail: data.mail }
         });
     
@@ -73,13 +73,7 @@ class User {
             password: hashedPassword
         }
       });
-        // Génération du token JWT après inscription
-        const token = jwt.sign(
-          { id: user.id, mail: data.mail },
-          'your-secret-key',
-          { expiresIn: '1h' }
-      );
-      return { user, token };
+      return { user };
 
     } catch (e){
       console.error('Erreur lors de l\'inscription :', e.message);
@@ -93,23 +87,39 @@ class User {
       const user = await prisma.users.findFirst({ where: { mail } });
 
       if(!user){
-        return res.status(401).json({ message: 'Email incorrect ou utilisateur inexistant.' });
+        return undefined
       }
 
       const isPasswordValid = await bcrypt.compare(password, user.password); // comparer les mdp
       if (!isPasswordValid) {
-        return res.status(401).json({ message: 'Mot de passe incorrect.' });
+        return undefined
       }
 
-      const token = jwt.sign({ id: user.id, mail: user.mail }, 'your-secret-token', { expiresIn: '1h' }); // créer un token au user
-
       //req.session.user = { id: user.id, mail: user.mail, token }; // créer une session au user 
-      return {id: user.id, mail: user.mail, token}
+      return {id: user.id, mail: user.mail}
     } catch(e){
       console.error('Erreur de connexion :', e.message);
+      return undefined
+    }
+  }
+
+  static async logout(req, res) {
+    try {
+      if (!req.session.user) {
+        return res.status(401).json({ message: 'Aucun utilisateur connecté.' });
+      }
+      req.session.destroy((err) => {
+        if (err) {
+          return res.status(500).json({ message: 'Erreur lors de la déconnexion.' });
+        }
+        res.status(200).json({ message: 'Déconnexion réussie.' });
+      });
+    } catch (e) {
+      console.error('Erreur lors de la déconnexion :', e.message);
       res.status(500).json({ message: 'Erreur interne du serveur.' });
     }
   }
+  
 }
 
 export default User;
