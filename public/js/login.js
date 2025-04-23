@@ -22,6 +22,30 @@ const handleSubmit = async (e) => {
         console.error('Erreur lors de la soumission :', e.message)
     }
 };
-const form = document.querySelector('.login-form');
-console.log(form);
+
 document.querySelector('.login-form').addEventListener('submit', handleSubmit);
+
+const handleLogout = async (e) => {
+    try {
+        e.preventDefault();
+
+        const response = await fetch('/logout', { // Appelle la route de déconnexion
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Échec de la déconnexion ${response.status}`);
+        }
+
+        console.log('Déconnexion réussie');
+        window.location.href = '/login'; // Redirige vers la page de connexion
+
+    } catch (e) {
+        console.error('Erreur lors de la déconnexion :', e.message);
+    }
+};
+
+document.querySelector(".logout-button").addEventListener('click', handleLogout)

@@ -8,6 +8,11 @@ export const authCheck = (req, res, next) => {
         return res.status(401).json({ message: 'Token non fourni.' });
     };
 
+    // Vérifier si le token est blacklisté
+    if (blacklistedTokens.has(token)) {
+        return res.status(401).json({ message: 'Token invalide ou expiré.' });
+    }
+
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
             return res.status(403).json({ message: 'Token invalide.' });
