@@ -11,11 +11,10 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
-    
+    script(defer src="js/menu.js")
     body
     div.navbar
         a.logo(href="/") Snappy
-
         ul
             li
                 a.home-link(href="/")
@@ -29,14 +28,16 @@ html(lang='en')
                 a.bell-link(href="/")
                     svg.bell-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
                         path(fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z")
-        
         div.container-searchBar-login
             input.searchBar(type='search' placeholder='Rechercher...')
             img.search-icon(src="/icons/search.svg" alt="search icon")
-            p.login: a.user-link(href="/")
-                svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
-                    path(fill="#currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
-    
+            div.user-menu-container
+                p.login: a.user-link(href="/")
+                    svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+                        path(fill="#currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
+                ul.user-dropdown
+                    li: a(href="/profil") Mon profil
+                    li: a(href="/logout") Déconnexion
     div.main-container
         div.left-container
             div.profil
@@ -45,9 +46,8 @@ html(lang='en')
                     div.user-content
                         p.username Jane Doe
                         p.identifiant @JaneDoe
-                p.biography  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat. ✨🌈💋
+                p.biography  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat. :scintillements::arc_en_ciel::baiser:
                 button.edit-button Modifier
-
             div.friends
                 p.followers 182 ami(e)s
                 div.friends-container
@@ -76,14 +76,13 @@ html(lang='en')
                     a(href="/")
                         img(src="/img/tim-mossholder.jpg" alt="friend picture" class="friends-picture-profile")
                 button.show-more-button Voir plus
-
         div.right-container
             div.post-container
                 div.media
                     div.icon-photos-videos(onclick="document.getElementById('uploadFile').click()")
                         img.image-icon(src="/icons/image.svg" alt="image icon")
                         p.post-photo PHOTOS / VIDÉOS
-                    input#uploadFile(type="file" accept="image/*" style="display:none")    
+                    input#uploadFile(type="file" accept="image/*" style="display:none")
                     img.camera-icon(src="/icons/camera.svg" alt="")
                     p.live VIDÉO EN DIRECT
                 div.img-input-container
@@ -92,7 +91,6 @@ html(lang='en')
                         input.whatsup(type="text-area" placeholder='Quoi de neuf Jane ?')
                         img.smiley-whatsup-icon(src="/icons/smiley.svg" alt="smiley-icon")
                 button.post-button Publier
-
             div.feed
                 div.feed-content
                     div.img-name-date-container
@@ -104,7 +102,6 @@ html(lang='en')
                             button.follow-button Suivi(e)
                     p.legend-feed Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat,  vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor  tortor. Morbi da vitae neque. Aenean fermentum mattis  malesuada.
                     img(src="/img/urban-fashion.jpeg" alt="feed picture" class="feed-picture")
-                
                 div.feed-footer
                     div.like-share-comment
                         div.interactions
@@ -122,4 +119,3 @@ html(lang='en')
                             img.smiley-icon(src="/icons/smiley.svg" alt="smiley-icon")
                         button.comment-button
                             img.send-icon(src="/icons/send.svg" alt="send-icon")
-
