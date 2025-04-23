@@ -54,6 +54,15 @@ class User {
     
     static async register(data) {
       try {
+        
+        const existingUser = await prisma.users.findUnique({
+          where: { mail: data.mail }
+        });
+    
+        if (existingUser) {
+          throw new Error('Cet email est déjà utilisé. Veuillez choisir un autre.');
+        }
+    
         const hashedPassword = await bcrypt.hash(data.password, 10); // hashé le mot de passe de l'utilisateur
 
         const user = await prisma.users.create({
