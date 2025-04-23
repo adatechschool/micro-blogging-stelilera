@@ -11,7 +11,9 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
-    
+    script(defer src="menu.js")
+
+
     body
     div.navbar
         a.logo(href="/") Snappy
@@ -33,10 +35,14 @@ html(lang='en')
         div.container-searchBar-login
             input.searchBar(type='search' placeholder='Rechercher...')
             img.search-icon(src="/icons/search.svg" alt="search icon")
-            p.login: a.user-link(href="/")
-                svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
-                    path(fill="#currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
-    
+            div.user-menu-container
+                p.login: a.user-link(href="/")
+                    svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+                        path(fill="#currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
+                ul.user-dropdown
+                    li: a(href="/profil") Mon profil
+                    li: a(href="/logout") Déconnexion
+
     div.main-container
         div.left-container
             div.profil

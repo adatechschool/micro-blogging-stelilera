@@ -99,8 +99,37 @@ ul{
     padding: 6px 6px 6px 30px;
     background-color: rgb(243, 241, 241);
 }
+.user-menu-container {
+    position: relative;
+    display: inline-block;
+}
+.user-dropdown {
+    right: 0;
+    top: 100%;
+    padding: 0;
+    width: 210px;
+    z-index: 1000;
+    display: none;
+    list-style: none;
+    margin: 8px 0 0 0;
+    border-radius: 8px;
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+.user-dropdown li a {
+    padding: 10px;
+    display: block;
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+.user-dropdown li a:hover {
+    background-color: #f0f0f0;
+}
+
 .main-container{
-    /* background-color: rgba(255, 0, 0, 0.1); */
     gap: 10px;
     display: flex;
     margin: 0 auto;
