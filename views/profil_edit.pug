@@ -12,6 +12,8 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap", rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap", rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap", rel="stylesheet")
+    script(defer src="/js/profil_edit.js")
+
 
   body
     div.navbar
@@ -49,24 +51,28 @@ html(lang='en')
 
     div.profile-section
       div.profile-header
-        button.edit-button Modifier
+        button#editProfileBtn.edit-button Modifier
         p.section-title Photo de profil
-    div.profile-edit-row
+      div.profile-edit-row
         img.profile-picture-edit(src="/img/fashionable-woman.jpeg" alt="user picture")
+        input#profilePictureInput(type='file', accept='image/*', style='display: none')
 
 
     div.cover-section
       div.cover-header
         p.section-title Photo de couverture
-        button.edit-button.cover Modifier
+        button#editCoverPhotoBtn.edit-button.cover Modifier
     div.cover-image
       img.cover-picture-edit(src="/img/colorful-geometric.jpeg" alt="cover picture")
+      input#coverPhotoInput(type='file', accept='image/*', style='display: none')
 
     div.bio-section
       div.bio-header
         p.section-title Biographie
-        button.edit-button.bio Modifier
+        button#editBioBtn.edit-button.bio Modifier
       div.bio-content
-        p.bio-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.✨🌈💋
+        p#bio-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.✨🌈💋
+        textarea#bioInput(style='display: none') This is the bio text that can be edited.
+        textarea#bioInput(name='bio', rows='5', style='display: none') Lorem ipsum dolor sit amet, consectetur adipiscing elit...
       div.bio-footer
         button.edit-button.validate Valider

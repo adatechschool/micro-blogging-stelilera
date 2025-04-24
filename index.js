@@ -55,6 +55,19 @@ app.get('/profil_edit', (req, res) => {
 app.get('/logout', (req, res) => {
   res.render('login'), {title: 'Snappy'}
 })
+import multer from 'multer';
+const upload = multer(); 
+app.post('/profil_edit', upload.none(), (req, res) => {
+  const newBio = req.body.bio;
+  if (!newBio) {
+    return res.status(400).json({ error: 'La biographie est vide.' });
+  }
+  console.log("Nouvelle biographie reçue :", newBio);
+  res.json({ success: true, message: 'Biographie mise à jour.' });
+});
+
+
+
 
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur le port http://localhost:${port}`);

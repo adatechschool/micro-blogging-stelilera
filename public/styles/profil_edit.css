@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -6,31 +6,36 @@ body{
   background-color: #EEEEEE;
   font-family: Helvetica, sans-serif;
 }
-a{
+
+a {
   cursor: pointer;
   text-decoration: none;
 }
-li{
+
+li {
   list-style: none;
 }
-.navbar{
+
+.navbar {
   top: 0;
   z-index: 10;
   height: 90px;
   display: flex;
   position: sticky;
   align-items: center;
-  padding: 0 50px 0 50px;
+  padding: 0 50px;
   background-color: black;
   justify-content: space-between;
 }
-.logo{
+
+.logo {
   font-size: 30px;
   color: #BFFF6B;
   font-weight: bold;
   font-family: "Rock Salt", cursive;
   width: 25%;
 }
+
 .nav-icons {
   gap: 70px;
   display: flex;
@@ -41,62 +46,73 @@ li{
   margin: 0;
   width: 50%;
 }
+
 .search-login-container {
   width: 25%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
+
 .search-container {
   position: relative;
   margin-right: 20px;
 }
+
 .house-icon, .users-icon, .bell-icon {
   color: white;
 }
-.house-icon{
+
+.house-icon {
   width: 32px;
   height: 32px;
   color: white;
   fill: currentColor;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
-.users-icon{
-  width:24px;
-  height:24px;
+
+.users-icon {
+  width: 24px;
+  height: 24px;
   color: white;
   fill: currentColor;
   transition: transform 0.2s ease, filter 0.2s ease; 
 }
-.bell-icon{
-  width:24px;
-  height:24px;
+
+.bell-icon {
+  width: 24px;
+  height: 24px;
   color: white;
   fill: currentColor;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
+
 .search-icon {
   left: 10px;
+  top: 20%;
   width: 16px;
   height: 16px;
   position: absolute;
   pointer-events: none;
 }
-.user-icon{
-  width:24px;
-  height:24px;
+
+.user-icon {
+  width: 24px;
+  height: 24px;
   color: white;
   fill: currentColor;
   transition: transform 0.2s ease, filter 0.2s ease; 
 }
+
 .home-link:hover .house-icon,
 .users-link:hover .users-icon,
 .bell-link:hover .bell-icon, 
-.user-link:hover .user-icon{
+.user-link:hover .user-icon {
   transform: scale(1.1);
   color: #BFFF6B;
 }
-.searchBar{
+
+.searchBar {
   width: 150px;
   height: 30px;
   border: none;
@@ -104,6 +120,7 @@ li{
   padding: 6px 6px 6px 30px;
   background-color: rgb(243, 241, 241);
 }
+
 .profile-title-wrapper {
   text-align: center;
   margin-bottom: 1rem;
@@ -119,6 +136,7 @@ li{
   margin: 0.5rem auto;
   border: 1px solid #666;
 }
+
 .profile-section {
   width: 100%;
   margin-bottom: 40px;
@@ -145,9 +163,9 @@ li{
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  border-radius: 0px;
+  border-radius: 8px;
   border: solid 2px black;
-  background-color: #BFFF6B;
+  background-color: white;
   box-shadow: 4px 4px 0px black;
   transition: all 0.2s ease;
 }
@@ -155,6 +173,15 @@ li{
 .edit-button:active {
   box-shadow: none;
   transform: translate(4px, 4px);
+}
+
+.edit-button:hover,
+.edit-button.cover:hover,
+.edit-button.bio:hover,
+.edit-button.validate:hover {
+  background-color: #D0FF8C;
+  transform: scale(1.05);
+  box-shadow: 6px 6px 0px black;
 }
 
 .profile-edit-row {
@@ -197,14 +224,16 @@ li{
   object-position: center;
   border-radius: 0px; 
 }
+
 .edit-button.cover {
   background-color: white;
   color: black;
   border: solid 2px black;
   box-shadow: 4px 4px 0px black;
-  border-radius: 0px;
+  border-radius: 8px;
   margin-left: 5px;
 }
+
 .bio-section {
   width: 100%;
   margin-bottom: 40px;
@@ -219,6 +248,7 @@ li{
   margin-bottom: 1rem;
   padding: 0 20px 20px 20px;
 }
+
 .bio-text {
   margin-left: 20px;
   margin-right: 20px;
@@ -230,7 +260,7 @@ li{
   color: black;
   border: solid 2px black;
   box-shadow: 4px 4px 0px black;
-  border-radius: 0px;
+  border-radius: 8px;
   margin-left: 0px;
 }
 
@@ -241,11 +271,11 @@ li{
 }
 
 .edit-button.validate {
-  background-color: #97db99;
+  background-color: white;
   color: black;
   border: solid 2px black;
   box-shadow: 4px 4px 0px black;
-  border-radius: 0px;
+  border-radius: 8px;
 }
 
 .edit-button.validate:active {
