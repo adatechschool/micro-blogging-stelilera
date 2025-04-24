@@ -49,8 +49,11 @@ app.get('/register', (req, res) => {
   res.render('register', { title: 'Snappy' });
 });
 
-
-
+app.get('/profile', (req, res) => {
+  res.render('profile', {
+    title: 'Mon Profil | Snappy',
+    });
+});
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur le port http://localhost:${port}`);
 })

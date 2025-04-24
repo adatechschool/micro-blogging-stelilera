@@ -1,0 +1,141 @@
+doctype html
+html(lang='fr')
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Mon Profil | Snappy
+    link(rel="shortcut icon" type="image/x-icon" href="icons/favicon.ico")
+    link(rel="stylesheet", href="/styles/profile.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
+  
+  body
+    // Barre de navigation
+    nav.navbar
+      a.logo(href="/") 
+        span.logo-text Snappy
+      
+      div.nav-icons
+        a.nav-icon(href="/")
+          svg.house-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512")
+            path(fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0016 16l112-.3a16 16 0 0016-15.7V368a16 16 0 0116-16h64a16 16 0 0116 16v95.6a16 16 0 0016 15.7l112 .3a16 16 0 0016-16V300L295.67 148.26a12.19 12.19 0 00-15.3 0z")
+        a.nav-icon(href="/friends")
+          svg.users-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512")
+            path(fill="currentColor" d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z")
+        a.nav-icon(href="/notifications")
+          svg.bell-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+            path(fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32z")
+      
+      div.search-user
+        input.search-input(type="search", placeholder="Rechercher...")
+        a.profile-link(href="/profile")
+          svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+            path(fill="currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
+    
+    // Contenu principal
+    div.main-container
+      // Profil principal avec photo, nom et bio (dans un contenant blanc)
+      div.white-card.profile-section
+        div.profile-photo-container
+          img.profile-photo(src="/img/fashionable-woman.jpeg", alt="Jane Doe")
+        
+        div.profile-info
+          h1.profile-name Jane Doe
+          p.profile-username @Jane Doe
+          p.profile-bio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat, vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor tortor. Meque placerat, ex est aliquam tellus, sit amet laoreet enim enim vitae neque. ✨🌈💋
+        
+        div.profile-actions
+          button.modify-button Modifier
+      
+      // Onglets de navigation
+      div.profile-tabs
+        a.tab.active(href="#") AMI(E)S
+        a.tab(href="#") PUBLICATIONS
+        a.tab(href="#") PHOTOS
+        a.tab(href="#") VIDEOS
+      
+      // Contenu principal en deux colonnes
+      div.content-columns
+        // Colonne gauche - Liste des amis
+        div.left-column
+          div.white-card
+            h2.friends-count 182 ami(e)s
+            
+            div.friends-grid
+              // Rangée 1
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/prince-akachi.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/nabih-navarro.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/stylish-man.jpeg", alt="Ami")
+              
+              // Rangée 2
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/erik-lucatero.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/bardia-hashemirad.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/pexels-heftiba.jpg", alt="Ami")
+              
+              // Rangée 3
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/albert-dera.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/portrait-woman.jpeg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/jessica-radanavong.jpg", alt="Ami")
+        
+        // Colonne droite - Publications
+        div.right-column
+          // Zone pour créer un post
+          div.white-card.create-post
+            div.post-options
+              div.photos-option
+                img.option-icon(src="/icons/image.svg", alt="Photos")
+                span.option-text PHOTOS / VIDÉOS
+              
+              div.video-option
+                img.option-icon(src="/icons/camera.svg", alt="Vidéo")
+                span.option-text VIDÉO EN DIRECT
+            
+            div.post-input-area
+              img.user-thumbnail(src="/img/fashionable-woman.jpeg", alt="Jane Doe")
+              div.input-wrapper
+                input.post-input(type="text", placeholder="Quoi de neuf Jane ?")
+                img.emoji-icon(src="/icons/smiley.svg", alt="Emoji")
+            
+            button.validate-button Valider
+          
+          // Publications
+          div.white-card.post
+            div.post-header
+              img.post-author-pic(src="/img/fashionable-woman.jpeg", alt="Jane Doe")
+              div.post-author-info
+                h3.post-author-name Jane Doe
+                p.post-date 22 mars 2024
+              div.post-menu ...
+            
+            p.post-text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            
+            img.post-image(src="/img/avocado-toast.jpg", alt="Publication")
+            
+            div.post-stats
+              div.stat-group
+                img.stat-icon(src="/icons/heart.svg", alt="J'aime")
+                span.stat-count 7.8K
+              div.stat-group
+                img.stat-icon(src="/icons/comment.svg", alt="Commentaires")
+                span.stat-count 12.8K
+              div.stat-group
+                img.stat-icon(src="/icons/share.svg", alt="Partages")
+                span.stat-count 18K
+              
+              img.bookmark-icon(src="/icons/save.svg", alt="Enregistrer")
+            
+            div.post-comment
+              input.comment-input(type="text", placeholder="Ajouter un commentaire...")
+              img.comment-emoji(src="/icons/smiley.svg", alt="Emoji")
