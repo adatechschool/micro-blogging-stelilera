@@ -39,8 +39,37 @@ export async function handleDeletePost(req, res) {
 
   export async function handleCreatePost (req,res) {
     try{
-      const data = {...req.body, userId: req.user.id};
-      const posts = await Post.create(data);
+      // const data = {...req.body, userId: req.session.user.id};
+      // const posts = await Post.create(data);
+
+      console.log("Session utilisateur :", req.session.user);
+      console.log("ID utilisateur :", req.session.user?.id);
+
+      if (!req.session.user || !req.session.user.id) {
+        return res.status(401).send("Utilisateur non authentifié.");
+    }
+
+    if (!req.body.text) {
+        return res.status(400).send("Le champ 'text' est requis.");
+    }
+
+    const userId = { connect: { id: req.session.user.id }}
+
+      const postData = {
+        text: req.body.text,
+        image: req.body.image || null,
+        users: userId // Associe le post à l'utilisateur
+        //user_id: req.session.user.id
+    };
+
+    console.log("Données envoyées à Prisma :", JSON.stringify(postData, null, 2));
+
+    const posts = await Post.create({
+        data: postData,
+        include: { users: true } // Assure l'inclusion des détails de l'utilisateur
+    });
+
+
       res.render('index', { posts })
     }catch(error){
         console.error(error);

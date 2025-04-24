@@ -25,6 +25,8 @@ const __dirname = path.dirname(__filename); // obtenir le dossier dans lequel se
 // Sert les fichiers statiques depuis "public"
 app.use(express.static(path.join(__dirname, 'public'))); // tous les fichiers qui sont dans le dossier public/ sont accessibles publiquement.
 
+app.use(express.urlencoded({ extended: true })); 
+
 app.use(express.json());
 app.use(users);
 app.use(posts);

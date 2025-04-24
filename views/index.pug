@@ -44,7 +44,7 @@ html(lang='en')
                 div.container-picture-name
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-profile")
                     div.user-content
-                        p.username #{user.mail}
+                        p.username Jane Doe
                         p.identifiant @JaneDoe
                 p.biography  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat. :scintillements::arc_en_ciel::baiser:
                 button.edit-button Modifier
@@ -88,15 +88,15 @@ html(lang='en')
                 div.img-input-container
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-post")
                     form(action="/posts" method="post").input-wrapper
-                        textarea.whatsup(name="content" placeholder='Quoi de neuf Jane ?')
+                        textarea.whatsup(name="text" placeholder='Quoi de neuf Jane ?')
                         img.smiley-whatsup-icon(src="/icons/smiley.svg" alt="smiley-icon")
-                button.post-button Publier
+                        button(type="submit").post-button Publier
             div.feed
                 div.feed-content
                     div.img-name-date-container
                         img(src="/img/jessica-radanavong.jpg" alt="user picture" class="user-picture-feed")
                         div.user-content
-                            p.username-feed #{user.mail}
+                            p.username-feed Jane Doe
                             p.feed-date 19 avril 2025
                         div.feed-button
                             button.follow-button Suivi(e)

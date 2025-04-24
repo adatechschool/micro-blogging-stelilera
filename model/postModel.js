@@ -4,7 +4,9 @@ const prisma = new PrismaClient();
 
 class Post {
   static async findAll() {
-    return await prisma.posts.findMany();
+    return await prisma.posts.findMany({
+      include: { users: true }
+    });
   }
 
   static async findOne(id) {
@@ -32,15 +34,11 @@ class Post {
       data: {
         text: data.text,
         image: data.image,
-        users: {
-          connect: {
-            id: data.user_id,
-          },
-        },
+        user_id: data.user_id
       },
       include: {
         users: true,
-      },
+      }
     });
     return post;
   }
