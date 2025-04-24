@@ -45,7 +45,7 @@ html(lang='en')
                 div.container-picture-name
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-profile")
                     div.user-content
-                        p.username JaneDoe
+                        p.username #{user.mail}
                         p.identifiant @JaneDoe
                 p.biography  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat. :scintillements::arc_en_ciel::baiser:
                 button.edit-button Modifier
@@ -97,7 +97,7 @@ html(lang='en')
                     div.img-name-date-container
                         img(src="/img/jessica-radanavong.jpg" alt="user picture" class="user-picture-feed")
                         div.user-content
-                            p.username-feed Jane Doe
+                            p.username-feed #{user.mail}
                             p.feed-date 19 avril 2025
                         div.feed-button
                             button.follow-button Suivi(e)

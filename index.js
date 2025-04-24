@@ -6,9 +6,12 @@ import session from "express-session";
 import path from 'path'; // importe le module path de Node.js, qui permet de manipuler les chemins de fichiers
 import { fileURLToPath } from 'url'; // importe une fonction qui permet de retrouver le chemin du fichier actuel, pour ensuite pouvoir reconstruire __dirname
 import loginCheck from "./middleware/loginMiddleware.js";
+import multer from 'multer';
 
 const app = express();
 const port = process.env.PORT;
+
+const upload = multer(); 
 
 app.use(session({
   secret: 'your-secret-token',
@@ -62,8 +65,7 @@ app.get('/logout', (req, res) => {
   res.render('login'), {title: 'Snappy'}
 })
 
-import multer from 'multer';
-const upload = multer(); 
+
 app.post('/profil_edit', upload.none(), (req, res) => {
   const newBio = req.body.bio;
   if (!newBio) {
@@ -74,14 +76,9 @@ app.post('/profil_edit', upload.none(), (req, res) => {
 });
 
 
-<<<<<<< HEAD
-app.get('/profile', (req, res) => {
-  res.render('profile', {
-    title: 'Mon Profil | Snappy',
-    });
+app.get('/profile', loginCheck, (req, res) => {
+  res.render('profile', {title: 'Mon Profil | Snappy', user: req.session.user });
 });
-=======
->>>>>>> feature/createPost
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur le port http://localhost:${port}`);
 })

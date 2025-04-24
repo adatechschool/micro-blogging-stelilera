@@ -63,7 +63,7 @@ export async function handleCreatePost(req, res) {
       include: { users: true }
     });
 
-    res.status(201).json(newPost); // tu peux aussi faire un redirect ou render si tu préfères
+    //res.status(201).json(newPost); // tu peux aussi faire un redirect ou render si tu préfères
     res.render('index', {newPost})
   } catch (error) {
     console.error('Erreur lors de la création du post :', error);
