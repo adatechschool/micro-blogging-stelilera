@@ -36,7 +36,7 @@ html(lang='en')
                     svg.user-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
                         path(fill="#currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z")
                 ul.user-dropdown
-                    li: a(href="/profil") Mon profil
+                    li: a(href="/") Mon profil
                     li: a.logout-button(href="/logout") Déconnexion
     div.main-container
         div.left-container
@@ -44,7 +44,7 @@ html(lang='en')
                 div.container-picture-name
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-profile")
                     div.user-content
-                        p.username #{user.mail}
+                        p.username JaneDoe
                         p.identifiant @JaneDoe
                 p.biography  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat. :scintillements::arc_en_ciel::baiser:
                 button.edit-button Modifier
@@ -96,7 +96,7 @@ html(lang='en')
                     div.img-name-date-container
                         img(src="/img/jessica-radanavong.jpg" alt="user picture" class="user-picture-feed")
                         div.user-content
-                            p.username-feed #{user.mail}
+                            p.username-feed Jane Doe
                             p.feed-date 19 avril 2025
                         div.feed-button
                             button.follow-button Suivi(e)
