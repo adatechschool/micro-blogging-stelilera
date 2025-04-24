@@ -46,21 +46,3 @@ export async function handleDeletePost(req, res) {
         res.status(500).json({ error: 'Erreur lors de la création de posts.' });
     }
     }
-
-    import jwt from 'jsonwebtoken';
-
-    export const showFeedPage = (req, res) => {
-      const token = req.cookies.token; // ou req.headers.authorization s’il est envoyé en header
-    
-      if (!token) return res.redirect('/login');
-    
-      try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const userId = decoded.id;
-    
-        res.render('feed', { userId }); // <-- tu passes l’ID à la vue
-      } catch (err) {
-        return res.status(401).send('Token invalide');
-      }
-    };
-        
