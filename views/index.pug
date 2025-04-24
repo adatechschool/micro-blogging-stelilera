@@ -47,7 +47,8 @@ html(lang='en')
                         p.username #{user.mail}
                         p.identifiant @JaneDoe
                 p.biography  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat. :scintillements::arc_en_ciel::baiser:
-                button.edit-button Modifier
+                a(href='/profil_edit')
+                    button.edit-button Modifier
             div.friends
                 p.followers 182 ami(e)s
                 div.friends-container
