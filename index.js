@@ -33,6 +33,12 @@ app.use(posts);
 app.set('view engine', 'pug');
 app.set('views', './views');
 
+app.post('/posts', (req, res) => {
+  const user = req.session.user;
+  console.log("User dans session :", user);
+});
+
+
 app.get('/', (req, res) => {
   //const loggedUserId = req.session.user.id
   if(!req.session.user){
@@ -55,6 +61,7 @@ app.get('/profil_edit', loginCheck, (req, res) => {
 app.get('/logout', (req, res) => {
   res.render('login'), {title: 'Snappy'}
 })
+
 import multer from 'multer';
 const upload = multer(); 
 app.post('/profil_edit', upload.none(), (req, res) => {
@@ -65,8 +72,6 @@ app.post('/profil_edit', upload.none(), (req, res) => {
   console.log("Nouvelle biographie reçue :", newBio);
   res.json({ success: true, message: 'Biographie mise à jour.' });
 });
-
-
 
 
 app.listen(port, () => {

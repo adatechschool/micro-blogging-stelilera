@@ -11,7 +11,8 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
-    script(defer src="js/menu.js")
+    script(defer type="module" src="js/menu.js")
+    script(defer type="module" src="js/post.js")
     body
     div.navbar
         a.logo(href="/") Snappy
@@ -88,9 +89,9 @@ html(lang='en')
                 div.img-input-container
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-post")
                     form(action="/posts" method="post").input-wrapper
-                        textarea.whatsup(name="content" placeholder='Quoi de neuf Jane ?')
+                        textarea.whatsup(name="post" placeholder='Quoi de neuf Jane ?')
                         img.smiley-whatsup-icon(src="/icons/smiley.svg" alt="smiley-icon")
-                button.post-button Publier
+                        button.post-button Publier
             div.feed
                 div.feed-content
                     div.img-name-date-container

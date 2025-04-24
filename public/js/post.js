@@ -2,6 +2,11 @@ const handlePostSubmit = async (e) => {
     try{
         e.preventDefault();
         const post = e.target.post.value.trim();
+        const userId = document.body.dataset.userId;
+
+        console.log("Contenu du post :", post);
+        console.log("User ID :", userId);
+        
         if(!post) return
         console.log(post);
         const response = await fetch('/posts', {
@@ -24,6 +29,6 @@ const handlePostSubmit = async (e) => {
         console.error('Erreur lors de la soumission :', e.message)
     }
 }
-document.querySelector('.whatsup').addEventListener('submit', handlePostSubmit)
+document.querySelector('form.input-wrapper').addEventListener('submit', handlePostSubmit)
 
 
