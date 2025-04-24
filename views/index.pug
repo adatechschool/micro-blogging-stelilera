@@ -87,8 +87,8 @@ html(lang='en')
                     p.live VIDÉO EN DIRECT
                 div.img-input-container
                     img(src="/img/fashionable-woman.jpeg" alt="user picture" class="user-picture-post")
-                    div.input-wrapper
-                        input.whatsup(type="text-area" placeholder='Quoi de neuf Jane ?')
+                    form(action="/posts" method="post").input-wrapper
+                        textarea.whatsup(name="content" placeholder='Quoi de neuf Jane ?')
                         img.smiley-whatsup-icon(src="/icons/smiley.svg" alt="smiley-icon")
                 button.post-button Publier
             div.feed
@@ -96,12 +96,14 @@ html(lang='en')
                     div.img-name-date-container
                         img(src="/img/jessica-radanavong.jpg" alt="user picture" class="user-picture-feed")
                         div.user-content
-                            p.username-feed John Doe
+                            p.username-feed #{user.mail}
                             p.feed-date 19 avril 2025
                         div.feed-button
                             button.follow-button Suivi(e)
                     p.legend-feed Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent  eleifend mauris ut sem volutpat euismod. Praesent lacinia quam erat,  vitae tempor massa accumsan in. Etiam id tristique ligula, eget auctor  tortor. Morbi da vitae neque. Aenean fermentum mattis  malesuada.
                     img(src="/img/urban-fashion.jpeg" alt="feed picture" class="feed-picture")
+                    //- each post in posts
+                    //-     p= post.text
                 div.feed-footer
                     div.like-share-comment
                         div.interactions
