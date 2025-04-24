@@ -37,13 +37,36 @@ export async function handleDeletePost(req, res) {
     }
 }
 
-  export async function handleCreatePost (req,res) {
-    try{
-      const data = {...req.body, userId: req.user.id};
-      const posts = await Post.create(data);
-      res.render('index', { posts })
-    }catch(error){
-        console.error(error);
-        res.status(500).json({ error: 'Erreur lors de la création de posts.' });
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+
+export async function handleCreatePost(req, res) {
+  try {
+    // Récupération de l'utilisateur depuis la session
+    const user = req.session.user;
+
+    if (!user || !user.id) {
+      return res.status(401).json({ error: "Utilisateur non connecté." });
     }
-    }
+
+    const userId = user.id;
+    const { text } = req.body;
+
+    // Création du post en liant l'utilisateur via la relation Prisma
+    const newPost = await prisma.posts.create({
+      data: {
+        text: text,
+        users: {
+          connect: { id: userId }
+        }
+      },
+      include: { users: true }
+    });
+
+    res.status(201).json(newPost); // tu peux aussi faire un redirect ou render si tu préfères
+    res.render('index', {newPost})
+  } catch (error) {
+    console.error('Erreur lors de la création du post :', error);
+    res.status(500).json({ error: 'Erreur serveur lors de la création du post.' });
+  }
+}
