@@ -2,7 +2,6 @@ const handlePostSubmit = async (e) => {
     try{
         e.preventDefault();
         const post = e.target.post.value.trim();
-        const userId = document.body.dataset.userId
         if(!post) return
         console.log(post);
         const response = await fetch('/posts', {
@@ -10,11 +9,9 @@ const handlePostSubmit = async (e) => {
             headers: {
                 'Content-Type':'application/json'
             },
-            credentials: 'include',
             body: JSON.stringify({
                 text: post,
-                image: null,
-                user_id: userId,
+                image: null
             }),
         })
         if(!response.ok){
