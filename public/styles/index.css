@@ -478,10 +478,10 @@ ul{
     display: flex;
     align-items: center;
 }
-.input-wrapper{
+/* .input-wrapper{
     flex: 1;
     position: relative;
-}
+} */
 .smiley-icon{
     top: 50%;
     right: 12px;

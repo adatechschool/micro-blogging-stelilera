@@ -63,10 +63,24 @@ export async function handleCreatePost(req, res) {
       include: { users: true }
     });
 
-    res.status(201).json(newPost); // tu peux aussi faire un redirect ou render si tu préfères
+    // res.status(201).json(newPost); // tu peux aussi faire un redirect ou render si tu préfères
     res.render('index', {newPost})
   } catch (error) {
     console.error('Erreur lors de la création du post :', error);
     res.status(500).json({ error: 'Erreur serveur lors de la création du post.' });
   }
+}
+
+export async function renderHome(req, res) {
+  const posts = await prisma.posts.findMany({
+    include: { users: true },
+    orderBy: { id: 'desc' }
+  });
+
+  const postsWithName = posts.map(post => ({
+    ...post,
+    displayName: post.users?.name || 'Utilisateur inconnu'
+  }));
+
+  res.render('index', { posts: postsWithName });
 }
