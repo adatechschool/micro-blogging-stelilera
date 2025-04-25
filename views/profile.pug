@@ -3,7 +3,7 @@ html(lang='fr')
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Mon Profil | Snappy
+    title Snappy
     link(rel="shortcut icon" type="image/x-icon" href="icons/favicon.ico")
     link(rel="stylesheet", href="/styles/profile.css")
     link(rel="preconnect", href="https://fonts.googleapis.com")
@@ -11,7 +11,9 @@ html(lang='fr')
     link(href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
-  
+    script(defer type="module" src="js/menu.js")
+    script(defer type="module" src="js/post.js")
+
   body
     // Barre de navigation
     nav.navbar
@@ -90,6 +92,13 @@ html(lang='fr')
                 img.friend-thumbnail(src="/img/portrait-woman.jpeg", alt="Ami")
               a.friend-link(href="#")
                 img.friend-thumbnail(src="/img/jessica-radanavong.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/lance-reis.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/bave-pictures.jpg", alt="Ami")
+              a.friend-link(href="#")
+                img.friend-thumbnail(src="/img/tim-mossholder.jpg", alt="Ami")
+
         
         // Colonne droite - Publications
         div.right-column

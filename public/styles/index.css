@@ -367,7 +367,7 @@ ul{
     width: 650px;
     display: flex;
     padding: 20px;
-    height: 1060px;
+    /* height: 1060px; */
     max-width: 715px;
     position: relative;
     margin-bottom: 10px;
