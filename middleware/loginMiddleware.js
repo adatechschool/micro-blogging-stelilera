@@ -1,15 +1,16 @@
 import jwt from 'jsonwebtoken';
 
 export const loginCheck = (req, res, next) => {
+    console.log('login check')
     if(!req.session.user){
-        console.log("err")
+        console.log("err user undefined")
         return res.redirect('/login')
     }
 
     const token = req.session.user.token
     
     if (!token) {
-        console.log("err")
+        console.log("err token undefined")
         return res.redirect('/login')
     };
 

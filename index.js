@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url'; // importe une fonction qui permet de retro
 import loginCheck from "./middleware/loginMiddleware.js";
 import db from './db/db.js';
 
-import multer from 'multer';
+//import multer from 'multer';
 
 const app = express();
 const port = process.env.PORT;
@@ -42,14 +42,6 @@ app.post('/posts', (req, res) => {
 });
 
 
-app.get('/', (req, res) => {
-  //const loggedUserId = req.session.user.id
-  if(!req.session.user){
-    return res.redirect('/register')
-  }
-  res.render('index', { title: 'Snappy', user: req.session.user });
-});
-
 app.get('/login', (req, res) => {
   res.render('login', { title: 'Snappy' });
 });
@@ -62,7 +54,7 @@ app.get('/profil_edit', loginCheck, (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-  res.clearCookie('connect.sid')
+  res.clearCookie("connect.sid")
   res.render('login'), {title: 'Snappy'}
 })
 

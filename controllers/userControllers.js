@@ -30,6 +30,7 @@ export async function handleGetAllUsers(req, res) {
 
       req.session.user = user // crée une session à l'utilisateur
       res.status(200).json({messsage: 'connexion reussie', user });
+      //res.render('index', { user })
     } catch(e){
       console.log('error retreive user')
       res.status(500).json({ e: 'Erreur lors de la connexion de l\'utilisateur'})
@@ -38,6 +39,7 @@ export async function handleGetAllUsers(req, res) {
 
   export const handleLogoutUser = async (req, res) => {
     //req.session.user = undefined
+    res.clearCookie("connect.sid")
     res.redirect("/logout")
   };
   

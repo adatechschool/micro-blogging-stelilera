@@ -29,6 +29,6 @@ const handlePostSubmit = async (e) => {
         console.error('Erreur lors de la soumission :', e.message)
     }
 }
-document.querySelector('form.input-wrapper').addEventListener('submit', handlePostSubmit)
+document.querySelector('.input-wrapper').addEventListener('submit', handlePostSubmit)
 
 
