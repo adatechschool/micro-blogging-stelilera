@@ -37,8 +37,8 @@ export async function handleGetAllUsers(req, res) {
   }
 
   export const handleLogoutUser = async (req, res) => {
-    req.session.user = undefined
-    res.redirect("/login")
+    //req.session.user = undefined
+    res.redirect("/logout")
   };
   
 

@@ -59,6 +59,7 @@ app.get('/profil_edit', loginCheck, (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
+  res.clearCookie('connect.sid')
   res.render('login'), {title: 'Snappy'}
 })
 
@@ -74,7 +75,7 @@ app.post('/profil_edit', upload.none(), (req, res) => {
 });
 
 
-app.get('/profile', (req, res) => {
+app.get('/profile', loginCheck, (req, res) => {
   res.render('profile', {
     title: 'Mon Profil | Snappy',
     });
