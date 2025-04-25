@@ -6,6 +6,9 @@ import session from "express-session";
 import path from 'path'; // importe le module path de Node.js, qui permet de manipuler les chemins de fichiers
 import { fileURLToPath } from 'url'; // importe une fonction qui permet de retrouver le chemin du fichier actuel, pour ensuite pouvoir reconstruire __dirname
 import loginCheck from "./middleware/loginMiddleware.js";
+import db from './db/db.js';
+
+import multer from 'multer';
 
 const app = express();
 const port = process.env.PORT;
@@ -65,13 +68,19 @@ app.get('/logout', (req, res) => {
 
 import multer from 'multer';
 const upload = multer(); 
-app.post('/profil_edit', upload.none(), (req, res) => {
+app.post('/profil_edit', upload.none(), async (req, res) => {
   const newBio = req.body.bio;
+  const userId = req.session.user?.id;
   if (!newBio) {
     return res.status(400).json({ error: 'La biographie est vide.' });
   }
-  console.log("Nouvelle biographie reçue :", newBio);
-  res.json({ success: true, message: 'Biographie mise à jour.' });
+  try {
+    await db.query('UPDATE users SET bio = $1 WHERE id = $2', [newBio, userId]);
+    res.json({ success: true, message: 'Biographie mise à jour.' });
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour de la biographie :', error);
+    res.status(500).json({ error: 'Erreur serveur lors de la mise à jour.' });
+  }
 });
 
 
