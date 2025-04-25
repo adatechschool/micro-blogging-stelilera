@@ -14,3 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  document.querySelector('.edit-button').addEventListener('click', () => {
+    window.location.href = '/profil_edit'
+  })

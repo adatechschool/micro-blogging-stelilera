@@ -24,6 +24,8 @@ const handlePostSubmit = async (e) => {
         }
         const result = await response.json()
         console.log('result :', result);
+
+        window.location.href = '/'
         
     } catch (e){
         console.error('Erreur lors de la soumission :', e.message)
