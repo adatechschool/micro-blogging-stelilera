@@ -21,7 +21,7 @@ Snappy est une plateforme sociale combinant les meilleures fonctionnalités de T
 📂 `routes/` – Définition des endpoints API  
 
 ## 🤝 Collaboration  
-Projet réalisé par **une équipe de 4 développeurs**, avec une méthodologie agile pour assurer une évolution progressive du produit.  
+Projet réalisé par **une équipe de 4 développeuses**, avec une méthodologie agile pour assurer une évolution progressive du produit.  
 
 ## 📌 Installation & utilisation  
 
