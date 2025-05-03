@@ -22,7 +22,6 @@ Snappy est une plateforme sociale combinant les meilleures fonctionnalités de T
 
 ## 🤝 Collaboration  
 Projet réalisé par **une équipe de 4 développeurs**, avec une méthodologie agile pour assurer une évolution progressive du produit.  
-En tant que **lead développeuse**, j’ai encadré l’équipe, coordonné les décisions techniques et veillé à la cohérence du code.
 
 ## 📌 Installation & utilisation  
 
