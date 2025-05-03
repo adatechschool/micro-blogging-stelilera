@@ -35,14 +35,17 @@ Avant de commencer, assurez-vous d’avoir installé :
 ### 🚀 Étapes d’installation  
 
 1️⃣ **Cloner le projet**  
-```bash``
+
 git clone: git@github.com:adatechschool/micro-blogging-stelilera.git
 
 2️⃣ **Installer les dépendences**
+
 npm install 
 
 3️⃣ **Configurer la base de donnée**
+
 npx prisma migrate dev
 
 4️⃣ **Lancer le serveur**
+
 npm run dev
